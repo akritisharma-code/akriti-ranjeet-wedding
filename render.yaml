@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: akriti-ranjeet-wedding
+    runtime: static
+    buildCommand: echo "Static wedding website - no build required"
+    staticPublishPath: .
