@@ -30,6 +30,17 @@
     @media(max-width:720px){.site-header{padding:20px 24px}.site-header .logo{font-size:32px}.menu-btn{display:flex;z-index:23}.top-nav{position:absolute;display:none;right:24px;top:70px;left:24px;padding:23px;background:#fffaf2;box-shadow:var(--shadow);border:1px solid var(--line);flex-direction:column;gap:23px}.top-nav.open{display:flex}.hero{grid-template-columns:1fr;gap:0;padding:94px 24px 84px;min-height:100svh;align-content:center}.hero:before{inset:10px}.hero:after{inset:17px}.hero-art{grid-row:1;width:min(72vw,345px);margin-bottom:-18px}.hero-copy{grid-row:2;padding-top:0}.hero-overline{font-size:9px;letter-spacing:.24em;margin-bottom:18px}.hero h1{font-size:clamp(65px,15vw,94px)}.hero h1 .amp{margin:-9px 0}.hero-phrase{font-size:25px;margin:22px 0 15px}.hero-date{font-size:10px;line-height:1.9;margin:14px 0 25px;letter-spacing:.17em}.hero-scroll{bottom:25px}.btn{padding:15px 18px}.ribbon{font-size:24px;line-height:1.4}.ribbon span{padding:0 8px}.section{padding:76px 21px}.section-heading{margin-bottom:34px}.section-heading h2{font-size:59px}.film-section{padding:70px 16px}.film-frame{min-height:400px}.film-text h3{font-size:56px}.film-decor{width:135px}.story-quote{font-size:43px}.day-card{grid-template-columns:1fr}.day-head{min-height:0;border-right:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:86px 1fr;align-content:center;gap:0 17px;padding:22px 25px}.day-number{grid-row:span 3;font-size:82px;align-self:center}.day-head .weekday{font-size:25px;margin-top:5px}.day-head .full-date{font-size:9px;margin-top:3px}.day-head .day-label{font-size:9px;margin-top:8px}.day-events{padding:0 22px}.event{grid-template-columns:1fr;gap:4px;padding:27px 0}.event-time{font-size:24px}.event-title{font-size:36px;margin:8px 0 8px}.family-grid{grid-template-columns:1fr;gap:12px}.family-card{padding:29px 15px}.family-card h3{font-size:39px}.finale-monogram{font-size:80px}.finale h2{font-size:50px}.countdown{gap:5px}.time-box{min-width:70px;padding:15px 8px}.time-box strong{font-size:33px}.time-box span{font-size:8px;letter-spacing:.1em}.site-footer p{line-height:1.8}}
     @media(max-width:380px){.hero-art{width:66vw}.hero h1{font-size:61px}.hero-phrase{font-size:23px}.hero-actions{gap:7px}.btn{padding:12px 13px;font-size:9px}.section-heading h2{font-size:52px}.time-box{min-width:62px}.film-frame{min-height:355px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+    /* Private invitation film: locally hosted MP4, portrait-first responsive player */
+    .modal-panel{width:min(520px,100%);max-height:calc(100dvh - 24px);overflow:auto;align-items:center;justify-content:center;padding:25px 20px 22px;background:#faf5ec}
+    .modal-inner{width:100%;max-width:420px;margin:0 auto;text-align:center}
+    .modal-close{top:9px;right:10px;z-index:5;width:42px;height:42px;border:1px solid #d6c6ae;border-radius:50%;background:#fff8ec;display:grid;place-items:center;line-height:1;box-shadow:0 3px 14px rgba(62,43,21,.09)}
+    .film-player-label{font-size:9px;letter-spacing:.23em;text-transform:uppercase;color:#99815e;margin:0 0 3px}
+    .film-player-title{font:italic 400 33px/.96 var(--serif);color:#776147;margin:7px 0 16px}
+    .video-holder{display:flex;align-items:center;justify-content:center;width:100%;background:transparent}
+    .video-holder video{display:block;max-width:100%;width:auto;height:auto;max-height:min(74dvh,730px);aspect-ratio:720 / 1236;object-fit:contain;background:#0d0c0b;box-shadow:0 14px 32px rgba(37,28,16,.15)}
+    .player-hint{font-size:11px;line-height:1.6;color:#847362;margin:13px 0 0}
+    @media(max-width:500px){.modal{padding:8px}.modal-panel{padding:22px 10px 15px;max-height:calc(100dvh - 16px)}.modal-close{top:8px;right:8px}.film-player-title{font-size:30px}.video-holder video{max-height:74dvh}}
   </style>
 </head>
 <body>
@@ -129,19 +140,47 @@
   </main>
   <footer class="site-footer"><p>Akriti <span class="heart">♥</span> Ranjeet&nbsp;&nbsp;·&nbsp;&nbsp; 02–04 December 2026&nbsp;&nbsp;·&nbsp;&nbsp; Ludhiana</p></footer>
 
-  <div class="modal" id="filmModal" role="dialog" aria-modal="true" aria-labelledby="modalHeading" aria-hidden="true"><div class="modal-panel"><button class="modal-close" id="modalClose" aria-label="Close wedding film">×</button><div class="modal-inner" id="modalContent"><p class="eyebrow">A special film from us</p><div class="ornament" aria-hidden="true"><span>✧</span></div><h2 id="modalHeading">Our story is coming soon.</h2><p>Our wedding film will appear here once it is ready. Until then, we're delighted to share the details of our celebrations.</p><button class="btn btn-ghost" id="modalDone">Back to Invitation</button></div></div></div>
+  <div class="modal" id="filmModal" role="dialog" aria-modal="true" aria-labelledby="modalHeading" aria-hidden="true"><div class="modal-panel"><button class="modal-close" id="modalClose" aria-label="Close wedding film">×</button><div class="modal-inner" id="modalContent"><p class="eyebrow">A special film from us</p><div class="ornament" aria-hidden="true"><span>✧</span></div><h2 id="modalHeading">Our Wedding Film</h2><p>Tap the play button to watch our story.</p><button class="btn btn-ghost" id="modalDone">Back to Invitation</button></div></div></div>
   <script>
-    // SITE SETTINGS — add your final wedding film URL when available.
-    // Supported: a YouTube watch/share URL, Vimeo URL or a direct MP4 file URL.
-    const WEDDING_FILM_URL = '';
+    // Video lives in the same repository folder as index.html.
+    const WEDDING_FILM_URL = 'our-story.mp4';
     const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
     menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu')});
     nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
-    const modal=document.getElementById('filmModal'),modalClose=document.getElementById('modalClose'),modalDone=document.getElementById('modalDone'),modalContent=document.getElementById('modalContent');let lastActive=null;
-    function embedFilm(){if(!WEDDING_FILM_URL)return;const url=WEDDING_FILM_URL.trim();let html='';try{const u=new URL(url);if(u.hostname.includes('youtube.com')||u.hostname==='youtu.be'){let id=u.hostname==='youtu.be'?u.pathname.slice(1):u.searchParams.get('v');if(!id&&u.pathname.includes('/shorts/'))id=u.pathname.split('/shorts/')[1];if(id)html='<iframe title="Akriti and Ranjeet wedding film" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?autoplay=1"></iframe>'}else if(u.hostname.includes('vimeo.com')){const id=u.pathname.split('/').filter(Boolean).pop();if(/^\d+$/.test(id))html='<iframe title="Akriti and Ranjeet wedding film" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen src="https://player.vimeo.com/video/'+id+'?autoplay=1"></iframe>'}else if(url.toLowerCase().split('?')[0].endsWith('.mp4')){html='<video controls playsinline autoplay src="'+url.replaceAll('"','&quot;')+'"></video>'}}catch(e){}if(html)modalContent.innerHTML='<div class="video-holder">'+html+'</div>';}
-    function openFilm(){lastActive=document.activeElement;embedFilm();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';modalClose.focus()}
-    function closeFilm(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(WEDDING_FILM_URL)location.reload();else if(lastActive)lastActive.focus()}
-    document.querySelectorAll('[data-open-film]').forEach(btn=>btn.addEventListener('click',openFilm));modalClose.addEventListener('click',closeFilm);modalDone.addEventListener('click',closeFilm);modal.addEventListener('click',e=>{if(e.target===modal)closeFilm()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeFilm()});
+    const modal=document.getElementById('filmModal'),modalClose=document.getElementById('modalClose'),modalContent=document.getElementById('modalContent');
+    const originalModalHTML=modalContent.innerHTML;
+    let lastActive=null;
+    function embedFilm(){
+      modalContent.innerHTML = '<p class="film-player-label">Akriti &amp; Ranjeet present</p>' +
+        '<h2 class="film-player-title" id="modalHeading">From Best Friends to Forever</h2>' +
+        '<div class="video-holder"><video id="weddingVideo" controls playsinline preload="metadata" poster="film-cover.jpg" aria-label="Akriti and Ranjeet wedding film">' +
+        '<source src="' + WEDDING_FILM_URL + '" type="video/mp4">Your browser does not support video playback.</video></div>' +
+        '<p class="player-hint">Tap play and turn on the sound to enjoy our story. ♡</p>';
+    }
+    function openFilm(){
+      lastActive=document.activeElement;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+      embedFilm();
+      const player=document.getElementById('weddingVideo');
+      if(player){const playAttempt=player.play();if(playAttempt&&playAttempt.catch)playAttempt.catch(()=>{});}
+      modalClose.focus();
+    }
+    function closeFilm(){
+      const player=document.getElementById('weddingVideo');if(player)player.pause();
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+      modalContent.innerHTML=originalModalHTML;
+      if(lastActive)lastActive.focus();
+    }
+    document.querySelectorAll('[data-open-film]').forEach(btn=>btn.addEventListener('click',openFilm));
+    modalClose.addEventListener('click',closeFilm);
+    modal.addEventListener('click',e=>{if(e.target===modal)closeFilm()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeFilm()});
+    const modalDone=document.getElementById('modalDone');
+    if(modalDone)modalDone.addEventListener('click',closeFilm);
     const target=new Date('2026-12-04T09:00:00+05:30').getTime();function tick(){const diff=target-Date.now();if(diff<=0){document.getElementById('countdown').innerHTML='<p class="countdown-ended">Our forever has begun. ♡</p>';return}const days=Math.floor(diff/86400000),hrs=Math.floor(diff%86400000/3600000),min=Math.floor(diff%3600000/60000),sec=Math.floor(diff%60000/1000);for(const [id,val] of [['d',days],['h',hrs],['m',min],['s',sec]])document.getElementById(id).textContent=String(val).padStart(2,'0')}tick();setInterval(tick,1000);
   </script>
 </body>
